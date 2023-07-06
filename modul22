@@ -1,0 +1,38 @@
+while True:
+    scroll = input("Введите несколько целых чисел через пробел")
+    any_number = int(input("Введите любое случайное число в диапазоне чисел введенных ранее"))
+    List = scroll.split()
+    List2 = ''.join(List)
+    if List2.isdigit() ==False:
+        continue
+    elif any_number > max(list(map(int, List))):
+        continue
+    else:
+        break
+print("Cписок ", List)
+numberslit = list(map(int, List))
+for i in range(len(numberslit)):
+    for j in range(len(numberslit) - i - 1):
+        if numberslit[j] > numberslit[j + 1]:
+            numberslit[j], numberslit[j + 1] = numberslit[j + 1], numberslitr[j]
+print("Отсортированный список ", numberslit)
+
+List3 = []
+List3.append(any_number)
+List4 = List3 + List
+numberslit2 = list(map(int, List4))
+for i in range(len(numberslit2)):
+    for j in range(len(numberslit2) - i - 1):
+        if numberslit[j] > numberslit2[j + 1]:
+            numberslit2[j], numberslit2[j + 1] = numberslit2[j + 1], numberslit2[j]
+before1 = numberslit2.index(any_number)-1
+after1 = numberslit2.index(any_number)+1
+number_before = numberslit2[before1]
+number_after = numberslit2[after1]
+Indbefore = numberslit.index(number_before)
+Indafter = numberslit.index(number_after)
+if Indbefore-Indafter > 1:
+    print("В следующий раз вводите число больше 0")
+else:
+    print('Индекс числа меньше введенного = ', Indbefore)
+    print('Индекс числа больше введенного = ', Indafter)
